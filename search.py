@@ -39,8 +39,3 @@ def getgooglelinks(search,siteurl=False):
               if link.find('http')==0:
                   links.append(link)
       return links
-
-#links = getgooglelinks('python','http://www.stackoverflow.com/')
-links = getgooglelinks('artur+mas')
-for link in links:
-       print link
