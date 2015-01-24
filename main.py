@@ -5,11 +5,9 @@ from search import getgooglelinks
 
 
 blacklist_file = "stop-words/stop-words-es.txt" ;
-webExemple1 = 'http://www.voidspace.org.uk'
-webExemple2 = 'http://www.lavanguardia.com'
-webExemple3 = 'http://www.google.com/search?q=Artur+Mas'
+numberOfSitesForDictionary = 3;
+numberOfKeywords = 30;
 
-url = webExemple1
 
 query = raw_input('Enter your search keywords: ');
 
@@ -25,7 +23,7 @@ for link in links:
 		topLinks.append(link);
 
 count = dict();
-for url in topLinks[0:3]:
+for url in topLinks[0:numberOfSitesForDictionary]:
 	
 	text = convertirEnText(url);
 	#text.encode('utf-8',errors='replace')
@@ -48,5 +46,5 @@ wordCountNew.sort(reverse=True) # natively sort tuples by first element
 #print wordCountNew
 
 
-for k,v in wordCountNew:
+for k,v in wordCountNew[0:numberOfKeywords]:
 	print k," -> ",v
